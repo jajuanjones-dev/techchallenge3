@@ -1,0 +1,28 @@
+---
+- name: Configure web server and deploy Hello World
+  hosts: webserver
+  become: true
+
+  tasks:
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start and enable nginx
+      service:
+        name: nginx
+        state: started
+        enabled: true
+
+    - name: Deploy Hello World index page
+      copy:
+        content: "<h1>Hello, World!</h1>\n"
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
