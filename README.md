@@ -1,3 +1,7 @@
+> **TL;DR:** Infrastructure as Code project demonstrating a two-tool provisioning workflow — Terraform provisions AWS infrastructure (EC2, S3, IAM role, security group), then Ansible configures the server (installs and configures Nginx to serve a live web page). Demonstrates the separation of concerns between infrastructure provisioning and configuration management, two distinct and commonly-paired DevOps disciplines.
+
+---
+
 # Tech Challenge 3 — Infrastructure as Code with Terraform and Ansible
 
 A "Hello, World!" web page deployed on AWS EC2, provisioned with **Terraform** and configured with **Ansible**.
